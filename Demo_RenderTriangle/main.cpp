@@ -15,7 +15,7 @@ int x_press_num = 0;
 int y_press_num = 0;
 
 
-/*void get_OpenGL_info() {
+void get_OpenGL_info() {
     // OpenGL information
     const GLubyte* name = glGetString(GL_VENDOR);
     const GLubyte* renderer = glGetString(GL_RENDERER);
@@ -24,7 +24,7 @@ int y_press_num = 0;
     std::cout << "Renderer name: " << renderer << std::endl;
     std::cout << "OpenGL version: " << glversion << std::endl;
 }
-*/
+
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height) {
     glViewport(0, 0, width, height);
@@ -171,6 +171,7 @@ void initializedGL(void) {
 }
 
 void paintGL(void) {
+    
     // always run
     glClearColor(0.1f, 0.1f, 0.1f, 1.0f);  //specify the background color
     glClear(GL_COLOR_BUFFER_BIT);
@@ -230,7 +231,7 @@ int main(int argc, char* argv[]) {
     glfwWindowHint(GLFW_RESIZABLE, GL_FALSE);
 
     /* Create a windowed mode window and its OpenGL context */
-    window = glfwCreateWindow(512, 512, "Hello Triangle", NULL, NULL);
+    window = glfwCreateWindow(512, 512, "Assignment 1", NULL, NULL);
     if (!window) {
         std::cout << "Failed to create GLFW window" << std::endl;
         glfwTerminate();
